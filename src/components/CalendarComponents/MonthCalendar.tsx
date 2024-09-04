@@ -17,7 +17,7 @@ const MonthCalendar: React.FC<MonthCalendarProps> = ({ month, onSelectDate, sele
       month={month}
       selected={selectedDate}
       onSelect={onSelectDate}
-      className='w-full border-collapse'
+      className='w-full border-collapse p-0'
       classNames={{
         months: 'flex flex-col sm:flex-row space-y-4 sm:space-x-4 sm:space-y-0',
         month: 'space-y-4 w-full',
@@ -25,12 +25,12 @@ const MonthCalendar: React.FC<MonthCalendarProps> = ({ month, onSelectDate, sele
         nav: 'hidden',
         table: 'w-full border-collapse',
         head_row: 'flex w-full',
-        head_cell: 'text-muted-foreground rounded-md w-full font-normal text-[0.8rem] flex justify-center',
+        head_cell: 'text-gray-400 rounded-md w-full font-medium text-1 flex justify-center',
         row: 'flex w-full',
-        cell: 'text-center text-sm p-0 relative [&:has([aria-selected])]:bg-primary [&:has([aria-selected])]:text-primary-foreground focus-within:relative focus-within:z-20 h-20 w-full border border-gray-200',
+        cell: 'text-center text-sm p-0 relative focus-within:relative focus-within:z-20 h-20 w-full sm:h-16 md:h-24 border border-gray-200',
         day: cn(
           buttonVariants({ variant: 'ghost' }),
-          'h-20 w-full p-0 pt-2 items-start font-normal aria-selected:opacity-100 rounded-none hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground'
+          'h-20 w-full sm:h-16 md:h-24 p-0 pt-2 items-start font-medium aria-selected:opacity-100 rounded-none hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground'
         ),
         day_selected:
           'bg-primary text-primary-foreground hover:bg-primary hover:text-primary-foreground focus:bg-primary focus:text-primary-foreground',

@@ -11,7 +11,7 @@ function Calendar({ className, classNames, showOutsideDays = true, ...props }: C
   return (
     <DayPicker
       showOutsideDays={showOutsideDays}
-      className={cn('p-3', className)}
+      className={cn('p-0', className)}
       classNames={{
         months: 'flex flex-col sm:flex-row space-y-4 sm:space-x-4 sm:space-y-0',
         month: 'space-y-4',
@@ -22,11 +22,11 @@ function Calendar({ className, classNames, showOutsideDays = true, ...props }: C
           buttonVariants({ variant: 'outline' }),
           'h-7 w-7 bg-transparent p-0 opacity-50 hover:opacity-100'
         ),
-        nav_button_previous: 'absolute left-1',
-        nav_button_next: 'absolute right-1',
+        nav_button_previous: 'absolute left-10 border-none text-light_blue',
+        nav_button_next: 'absolute right-10 border-none text-light_blue',
         table: 'w-full border-collapse space-y-1',
         head_row: 'flex',
-        head_cell: 'text-muted-foreground rounded-md w-9 font-normal text-[0.8rem]',
+        head_cell: 'text-muted-foreground mx-1 rounded-md w-9 font-normal text-[0.8rem]',
         row: 'flex w-full mt-2',
         cell: 'h-9 w-9 mx-1 text-center text-sm p-0 relative focus-within:relative focus-within:z-20',
         day: cn(buttonVariants({ variant: 'ghost' }), 'h-9 w-9 p-0 font-normal rounded-full aria-selected:opacity-100'),
@@ -42,8 +42,8 @@ function Calendar({ className, classNames, showOutsideDays = true, ...props }: C
         ...classNames
       }}
       components={{
-        IconLeft: ({ ...props }) => <ChevronLeft className='h-4 w-4' />,
-        IconRight: ({ ...props }) => <ChevronRight className='h-4 w-4' />
+        IconLeft: ({ ...props }) => <ChevronLeft className='h-6 w-6' />,
+        IconRight: ({ ...props }) => <ChevronRight className='h-6 w-6' />
       }}
       {...props}
     />
