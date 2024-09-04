@@ -1,10 +1,10 @@
-import './App.css'
+import CalendarPage from '~/pages/CalendarPage'
 
 function App() {
   return (
-    <>
-      <h1>Hello World</h1>
-    </>
+    <div className='app'>
+      <CalendarPage />
+    </div>
   )
 }
 
