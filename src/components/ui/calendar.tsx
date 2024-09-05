@@ -30,14 +30,12 @@ function Calendar({ className, classNames, showOutsideDays = true, ...props }: C
         row: 'flex w-full mt-2',
         cell: 'h-9 w-9 mx-1 text-center text-sm p-0 relative focus-within:relative focus-within:z-20',
         day: cn(buttonVariants({ variant: 'ghost' }), 'h-9 w-9 p-0 font-normal rounded-full aria-selected:opacity-100'),
-        day_range_end: 'day-range-end',
         day_selected:
           'bg-primary text-primary-foreground rounded-full hover:bg-primary hover:text-primary-foreground focus:bg-primary focus:text-primary-foreground',
-        day_today: 'bg-accent text-accent-foreground',
+        day_today: 'bg-calendar_tile text-accent-foreground',
         day_outside:
           'day-outside text-muted-foreground opacity-50 aria-selected:bg-accent/50 aria-selected:text-muted-foreground aria-selected:opacity-30',
         day_disabled: 'text-muted-foreground opacity-50',
-        day_range_middle: 'aria-selected:bg-accent aria-selected:text-accent-foreground',
         day_hidden: 'invisible',
         ...classNames
       }}

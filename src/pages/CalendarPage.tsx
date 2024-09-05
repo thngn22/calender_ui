@@ -1,11 +1,15 @@
 import React from 'react'
 import { ChevronLeft, ChevronRight } from 'lucide-react'
+
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '~/components/ui/select'
 import { Button } from '~/components/ui/button'
 import DefaultCalendar from '~/components/CalendarComponents/DefaultCalendar'
 import MonthCalendar from '~/components/CalendarComponents/MonthCalendar'
 import YearCalendar from '~/components/CalendarComponents/YearCalendar'
+import EventDateComponent from '~/components/EventDateComponent'
+
 import { handleDateChange } from '~/utils/algorithsm'
+import { eventDay } from '~/data'
 
 const CalendarPage: React.FC = () => {
   const [currentDate, setCurrentDate] = React.useState(new Date())
@@ -21,7 +25,7 @@ const CalendarPage: React.FC = () => {
   }
 
   return (
-    <div className='h-dvh'>
+    <div>
       {/* UI cho màn hình nhỏ hơn md */}
       <div className='block md:hidden bg-dark_orange mx-8'>
         <div className='bg-light_blue'>
@@ -77,7 +81,7 @@ const CalendarPage: React.FC = () => {
       </div>
 
       {/* UI cho màn hình lớn hơn hoặc bằng md */}
-      <div className='bg-calendar_tile h-full'>
+      <div className='bg-calendar_tile min-h-dvh'>
         <div className='hidden md:grid md:grid-cols-3 md:space-x-4 md:px-28 py-4'>
           <div className='md:col-span-1 bg-white rounded-sm shadow-lg'>
             <DefaultCalendar
@@ -88,7 +92,9 @@ const CalendarPage: React.FC = () => {
             />
             <hr className='border-none h-1 bg-gray-200' />
 
-            <div>cc</div>
+            <div className='p-4'>
+              <EventDateComponent events={eventDay} currentDate={currentDate} />
+            </div>
           </div>
 
           <div className='md:col-span-2 bg-white rounded-sm shadow-lg pt-4'>
@@ -96,19 +102,19 @@ const CalendarPage: React.FC = () => {
               <div className='flex items-center'>
                 <Button
                   onClick={() => setCurrentDate(handleDateChange(currentDate, viewMode, 'previous'))}
-                  className='border-none px-2'
+                  className='border-none px-1'
                   variant='outline'
                 >
                   <ChevronLeft className='h-6 w-6 text-light_blue' />
                 </Button>
                 <Button
                   onClick={() => setCurrentDate(handleDateChange(currentDate, viewMode, 'next'))}
-                  className='border-none px-2'
+                  className='border-none px-1'
                   variant='outline'
                 >
                   <ChevronRight className='h-6 w-6 text-light_blue' />
                 </Button>
-                <p className='text-xl font-semibold'>
+                <p className='text-2xl font-bold text-dark_blue'>
                   {viewMode === 'month'
                     ? currentDate.toLocaleString('en-US', { month: 'long', year: 'numeric' })
                     : currentDate.getFullYear()}

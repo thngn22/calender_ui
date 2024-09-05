@@ -20,7 +20,7 @@ const YearCalendar: React.FC<YearCalendarProps> = ({ year, onSelectDate, selecte
   }, [selectedDate, year, setCurrentDate])
 
   return (
-    <div className='grid xl:grid-cols-3 xl:gap-4 grid-cols-2 gap-2 pt-2'>
+    <div className='grid xl:grid-cols-3 xl:gap-4 grid-cols-2 gap-2 py-2'>
       {months.map((month) => (
         <div key={month.toString()} className='flex flex-col justify-center items-center'>
           <p className='font-semibold'>{format(month, 'MMMM')}</p>
@@ -42,8 +42,8 @@ const YearCalendar: React.FC<YearCalendarProps> = ({ year, onSelectDate, selecte
               cell: 'h-6 w-full text-center text-xs mx-1 relative focus-within:relative focus-within:z-20',
               day: 'h-6 w-full px-[0.35rem] font-normal aria-selected:opacity-100 rounded-full',
               day_selected:
-                'bg-primary text-primary-foreground hover:bg-primary hover:text-primary-foreground focus:bg-primary focus:text-primary-foreground',
-              day_today: 'bg-accent text-accent-foreground',
+                'bg-calendar_tile text-accent-foreground hover:bg-calendar_tile hover:text-accent-foreground focus:bg-calendar_tile focus:text-accent-foreground',
+              day_today: 'bg-dark_blue text-primary-foreground',
               day_outside: 'text-muted-foreground opacity-50',
               day_disabled: 'text-muted-foreground opacity-50',
               day_hidden: 'invisible'

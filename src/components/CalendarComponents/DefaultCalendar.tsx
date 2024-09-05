@@ -28,7 +28,10 @@ const DefaultCalendar: React.FC<DefaultCalendarProps> = ({
         months: 'flex flex-col sm:flex-row space-y-4 sm:space-x-4 sm:space-y-0 justify-center py-8',
         caption_label: 'text-dark_blue text-xl font-bold',
         head_cell: 'text-gray-400 mx-1 w-9 font-medium text-[0.8rem]',
-        day: 'h-9 w-9 p-0 font-normal aria-selected:opacity-100'
+        day: 'h-9 w-9 p-0 font-normal rounded-full aria-selected:opacity-100 hover:bg-calendar_tile hover:text-accent-foreground',
+        day_today: 'bg-dark_blue text-primary-foreground hover:bg-dark_blue hover:text-primary-foreground',
+        day_selected:
+          'bg-calendar_tile text-accent-foreground hover:bg-calendar_tile hover:text-accent-foreground focus:bg-calendar_tile focus:text-accent-foreground'
       }}
       components={{
         IconLeft: ({ ...props }) => (
